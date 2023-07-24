@@ -2,8 +2,17 @@ package application
 
 import (
 	"encoding/json"
+	"home-service/pkg/infra/home"
 	"log"
 	"net/http"
+)
+
+const (
+	name = "name"
+)
+
+var (
+	HomeProvider home.HomeProvider
 )
 
 func writeReponse(w http.ResponseWriter, r *http.Request, body interface{}) {
