@@ -17,7 +17,7 @@ func NewHome(r *mux.Router) {
 	}
 	HomeProvider = h
 
-	r.HandleFunc("/test/{text}", testHandler).Methods(http.MethodGet)
+	r.HandleFunc("/test/{name}", testHandler).Methods(http.MethodGet)
 	r.HandleFunc("/endpoint/{name}", addEndpointHandler).Methods(http.MethodPost)
 	r.HandleFunc("/condition/{name}", addConditionHandler).Methods(http.MethodPost)
 	r.HandleFunc("/restart", restartHandler).Methods(http.MethodPost)
