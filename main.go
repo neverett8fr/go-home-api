@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	cmd "home-service/cmd"
+	application "home-service/pkg/application/service"
+	"home-service/pkg/config"
 	"log"
-	"tempest-user-service/cmd"
-	application "tempest-user-service/pkg/application/service"
-	"tempest-user-service/pkg/config"
 
 	"github.com/gorilla/mux"
 )
@@ -13,7 +13,7 @@ import (
 // Route declaration
 func getRoutes() *mux.Router {
 	r := mux.NewRouter()
-	application.NewUserInformation(r)
+	application.NewHome(r)
 
 	return r
 }

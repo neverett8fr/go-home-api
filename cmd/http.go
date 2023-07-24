@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
+	"home-service/pkg/config"
 	"log"
 	"net/http"
-	"tempest-user-service/pkg/config"
 	"time"
 
 	"github.com/gorilla/mux"

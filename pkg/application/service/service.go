@@ -1,13 +1,13 @@
 package application
 
 import (
+	"home-service/pkg/application/entities"
 	"net/http"
-	"tempest-user-service/pkg/application/entities"
 
 	"github.com/gorilla/mux"
 )
 
-func NewUserInformation(r *mux.Router) {
+func NewHome(r *mux.Router) {
 	r.HandleFunc("/test/{text}", testHandler).Methods("GET")
 }
 

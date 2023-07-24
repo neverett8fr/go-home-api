@@ -3,7 +3,7 @@
 ## Build
 FROM golang:1.16-buster AS build
 
-WORKDIR /tempest-user-service
+WORKDIR /home-service
 
 COPY go.mod ./
 COPY go.sum ./
@@ -14,18 +14,18 @@ COPY config/*.yaml ./
 COPY . .
 COPY *.go ./
 
-RUN go build -o /tempest-user-service
+RUN go build -o /home-service
 
 ## Deploy
 FROM gcr.io/distroless/base-debian10
 
 WORKDIR /
 
-COPY --from=build /tempest-user-service ./
+COPY --from=build /home-service ./
 
 EXPOSE 8080
 
 USER nonroot:nonroot
 
 
-ENTRYPOINT ["/tempest-user-service"]
+ENTRYPOINT ["/home-service"]

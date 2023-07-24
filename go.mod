@@ -1,4 +1,4 @@
-module tempest-user-service
+module home-service
 
 go 1.18
 
