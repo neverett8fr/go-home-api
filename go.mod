@@ -7,4 +7,4 @@ require (
 	gopkg.in/yaml.v2 v2.4.0
 )
 
-require github.com/neverett8fr/go-home v0.0.0-20230724234213-ecfe7d2ab2b7
+require github.com/neverett8fr/go-home v0.0.0-20230725132805-c8adda4e9a74
