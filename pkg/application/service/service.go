@@ -21,6 +21,7 @@ func NewHome(r *mux.Router) {
 	r.HandleFunc("/endpoint/{name}", addEndpointHandler).Methods(http.MethodPost)
 	r.HandleFunc("/condition/{name}", addConditionHandler).Methods(http.MethodPost)
 	r.HandleFunc("/restart", restartHandler).Methods(http.MethodPost)
+	r.HandleFunc("/start", startHandler).Methods(http.MethodPost)
 }
 
 func testHandler(w http.ResponseWriter, r *http.Request) {
@@ -88,6 +89,18 @@ func restartHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	body := entities.NewResponse("service restarted", errStop, errStart)
+
+	writeReponse(w, r, body)
+}
+
+func startHandler(w http.ResponseWriter, r *http.Request) {
+
+	err := HomeProvider.StartHome()
+	if err != nil {
+		log.Printf("error starting home, err %v", err)
+	}
+
+	body := entities.NewResponse("service started", err)
 
 	writeReponse(w, r, body)
 }
