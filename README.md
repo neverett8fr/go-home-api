@@ -1,8 +1,22 @@
 # home-service  
-  
+
+## test  
+
+request  
+`{{host}}:8081/test/asdf  GET`  
+response  
+
+```go
+{
+    "errors": null,
+    "data": "teststring"
+}
+```
+
 ## add endpoint  
 
-`{{host}}:8081/endpoint/name1`  
+request  
+`{{host}}:8081/endpoint/name1  POST`  
 
 ```go
 {
@@ -11,9 +25,21 @@
 }
 ```  
 
+response  
+
+```go
+{
+    "errors": [
+        null
+    ],
+    "data": "endpoint added"
+}
+```
+
 ## add condition  
 
-`{{host}}:8081/condition/name1`  
+request  
+`{{host}}:8081/condition/name1  POST`  
 
 ```go
 {
@@ -21,10 +47,43 @@
 }
 ```  
 
+response  
+
+```go
+{
+    "errors": [
+        null
+    ],
+    "data": "condition added"
+}
+```
+
 ## restart  
 
-`{{host}}:8081/restart`  
+request  
+`{{host}}:8081/restart  POST`  
+response  
+
+```go
+{
+    "errors": [
+        null
+    ],
+    "data": "service restarted"
+}
+```
 
 ## start  
 
-`{{host}}:8081/start`  
+request  
+`{{host}}:8081/start  POST`  
+response  
+
+```go
+{
+    "errors": [
+        null
+    ],
+    "data": "service started"
+}
+```
